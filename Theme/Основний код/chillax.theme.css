@@ -1,0 +1,678 @@
+
+/* CHILLAX — King custom build */
+@import url("https://warrayquipsome.github.io/Chillax/chillax.css");
+
+/* addons */
+@import url("https://mwittrien.github.io/BetterDiscordAddons/Themes/EmojiReplace/base/Microsoft.css");
+@import url("https://mwittrien.github.io/BetterDiscordAddons/Themes/_res/SettingsIcons.css");
+@import url("https://chillax-org.github.io/Discolored/main.css");
+@import url("https://warrayquipsome.github.io/Chillax/Addons/IconPackEdited.css");
+@import url("https://warrayquipsome.github.io/Chillax/Addons/AvatarOnlyMemberList.css");
+@import url("https://warrayquipsome.github.io/Chillax/Addons/FolderRedesign.css");
+@import url("https://raw.githubusercontent.com/DiscordStyles/RadialStatus/refs/heads/deploy/RadialStatus.css");
+@import url("https://warrayquipsome.github.io/Chillax/Addons/FriendGrid.css");
+@import url("https://warrayquipsome.github.io/Chillax/Addons/ColoredLinks.css");
+@import url("https://warrayquipsome.github.io/Chillax/Addons/HideAnnoyingElements.css");
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ROOTS — змінюй тут (колір, фон, тексти, швидкість анімацій)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+    /* фон */
+    --background-image: var(--wallpaper);
+    --bg-opacity: 100%;
+    --wallpaper: url("https://warrayquipsome.github.io/Chillax/Wallpapers/modern-dark-bg.png");
+    --modern-dark-bg: url("https://warrayquipsome.github.io/Chillax/Wallpapers/modern-dark-bg.png");
+    --modern-light-bg: url("https://warrayquipsome.github.io/Chillax/Wallpapers/modern-light-bg.png");
+
+    /* профіль / шрифти */
+    --user-name: "King";
+    --edited-message: " змінено ✎ ";
+    --font-name: Poppins;
+    --font-size: 13px;
+    --group-chat-font: "Monoton";
+
+    /* акцент (обидва!) */
+    --accentcolor: 251, 84, 84;
+    --accentcolorV2: #fb5454;
+
+    /* radial status */
+    --rs-small-spacing: 3px;
+    --rs-large-spacing: 5px;
+    --rs-medium-spacing: 4px;
+    --rs-small-width: 3px;
+    --rs-medium-width: 4px;
+    --rs-large-width: 5px;
+    --rs-avatar-shape: 50%;
+    --rs-online-color: #1df594;
+    --rs-idle-color: #faa61a;
+    --rs-dnd-color: #f04747;
+    --rs-offline-color: #636b75;
+    --rs-streaming-color: #643da7;
+    --rs-invisible-color: #636b75;
+    --rs-phone-visible: block;
+    --rs-phone-color: var(--rs-online-color);
+
+    /* settings */
+    --themelightsettingsmodalbackground: rgb(223, 223, 223);
+    --themedarksettingsmodalbackground: rgb(40, 38, 44);
+    --settingsmodalwidth: 980px;
+    --settingsmodalheight: 82vh;
+
+    /* member list */
+    --memberlist-border-radius: 12px;
+
+    /* плейсхолдери */
+    --chillax-input-field: "Напиши щось… або просто чілл";
+    --chillax-input-field-locked: "Тут канал закритий — не почіллиш";
+    --chillax-input-typing-indicator-one-person: "тискає кнопки";
+    --chillax-input-typing-indicator-many-person: "тискають кнопки";
+
+    /* скрол */
+    --chillax-scroller-color: rgba(var(--accentcolor), 0.35);
+
+    /* spotify squid */
+    --chillax-spotify-control-squid-gif-url: url("https://raw.githubusercontent.com/Chillax-ORG/Images/refs/heads/main/Glow_Squid_BE1.gif");
+    --chillax-spotify-control-squid-width: 32px;
+    --chillax-spotify-control-squid-height: 32px;
+    --chillax-spotify-control-squid-glow: rgba(var(--accentcolor), 0.55);
+
+    /* glass + анімації */
+    --king-glass-blur: 14px;
+    --king-glass-tint: rgba(12, 12, 14, 0.55);
+    --king-glass-border: rgba(var(--accentcolor), 0.22);
+    --king-anim-fast: 0.16s;
+    --king-anim-mid: 0.3s;
+    --king-anim-slow: 0.55s;
+    --king-ease-pop: cubic-bezier(0.34, 1.4, 0.64, 1);
+    --king-ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+    --king-glow: rgba(var(--accentcolor), 0.5);
+    --king-glow-strong: rgba(var(--accentcolor), 0.85);
+    --king-bg-drift: 75s;
+    --king-pulse: 2s;
+}
+
+
+/* вікно — dark */
+:root.theme-dark {
+    --window-margin: 22px;
+    --window-colour: rgba(8, 8, 10, 0.72);
+    --window-blur: 12px;
+    --window-border-radius: 14px;
+    --sidebar-colour: rgba(28, 28, 32, 0.82);
+}
+
+/* вікно — light */
+:root.theme-light {
+    --window-margin: 22px;
+    --window-colour: rgba(255, 255, 255, 0.72);
+    --window-blur: 12px;
+    --window-border-radius: 14px;
+    --sidebar-colour: rgba(235, 235, 240, 0.9);
+}
+
+
+/* discord transparency */
+.theme-dark {
+    --background-message-hover: rgba(var(--accentcolor), 0.09);
+    --header-primary: #fff;
+    --header-secondary: #b9bbbe;
+    --text-normal: #e3e4e6;
+    --text-muted: #9d9d9d;
+    --channels-default: #8e9297;
+    --interactive-normal: #b9bbbe;
+    --interactive-hover: #fff;
+    --interactive-active: #fff;
+    --interactive-muted: #4f545c;
+    --background-primary: transparent;
+    --background-secondary: transparent;
+    --background-tertiary: transparent;
+    --background-accent: rgba(28, 28, 32, 0.75);
+    --activity-card-background: transparent;
+    --deprecated-panel-background: transparent;
+    --brand-experiment: rgb(var(--accentcolor));
+    --brand-experiment-560: var(--accentcolorV2);
+}
+
+.theme-light {
+    --background-message-hover: rgba(var(--accentcolor), 0.08);
+    --header-primary: #111;
+    --header-secondary: #3f3f3f;
+    --text-normal: #2a2a2a;
+    --text-muted: #555;
+    --channels-default: #585b5e;
+    --interactive-normal: #3a3a3a;
+    --interactive-hover: #111;
+    --interactive-active: #000;
+    --interactive-muted: #4f545c;
+    --background-primary: transparent;
+    --background-secondary: transparent;
+    --background-tertiary: transparent;
+    --background-accent: rgba(240, 240, 245, 0.85);
+    --activity-card-background: transparent;
+    --deprecated-panel-background: transparent;
+}
+
+/* friends grid — прозорі банери */
+.theme-dark {
+    --FG-cards-banner-background: transparent !important;
+}
+
+.theme-light {
+    --FG-cards-banner-background: transparent !important;
+}
+
+
+/*Permissions*/
+/*
+- You do not have the rights to use our theme name Chillax™ on other projects
+- You do not have the rights to remove our theme watermark in the theme
+- You do not have the rights to change this theme author/dev/maintainer name to anyone
+*/
+
+/*credits*/
+/*
+========================= Chillax Squad =========================
+ Wq                                       Owner & Dev
+ LofiTurtle                               Dev & Maintainer
+ Inmoresentum                             Dev & Maintainer
+ Demented_Elmo                            Dev
+=================================================================
+ King custom layer — animations, glass, accents (local)
+=================================================================
+*/
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   KING CUSTOM — повний візуал + анімації
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes king-drift {
+    0% { transform: scale(1.02) translate(0, 0); }
+    100% { transform: scale(1.08) translate(-1.2%, -0.8%); }
+}
+
+@keyframes king-pulse-glow {
+    0%, 100% { filter: drop-shadow(0 0 4px var(--king-glow)); }
+    50% { filter: drop-shadow(0 0 14px var(--king-glow-strong)); }
+}
+
+@keyframes king-pulse-scale {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.14); opacity: 0.9; }
+}
+
+@keyframes king-pop-in {
+    0% { opacity: 0; transform: scale(0.92) translateY(14px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes king-slide-in {
+    0% { opacity: 0; transform: translateX(-8px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes king-shimmer {
+    0% { background-position: 200% center; }
+    100% { background-position: -200% center; }
+}
+
+@keyframes king-typing {
+    0%, 70%, 100% { transform: translateY(0); opacity: 0.4; }
+    35% { transform: translateY(-6px); opacity: 1; }
+}
+
+@keyframes king-ring {
+    0% { box-shadow: 0 0 0 0 rgba(var(--accentcolor), 0.55); }
+    100% { box-shadow: 0 0 0 10px rgba(var(--accentcolor), 0); }
+}
+
+@keyframes king-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+@keyframes king-toast {
+    0% { opacity: 0; transform: translateX(40px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+
+/* —— фон + віньєтка —— */
+#app-mount {
+    position: relative;
+}
+
+#app-mount::before {
+    content: "";
+    position: fixed;
+    inset: -6%;
+    z-index: -2;
+    pointer-events: none;
+    background: var(--wallpaper) center / cover no-repeat;
+    animation: king-drift var(--king-bg-drift) ease-in-out infinite alternate;
+    will-change: transform;
+}
+
+#app-mount::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse at 20% 0%, rgba(var(--accentcolor), 0.12), transparent 50%),
+        radial-gradient(ellipse at 80% 100%, rgba(100, 61, 167, 0.08), transparent 45%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.45));
+}
+
+.theme-light #app-mount::after {
+    background:
+        radial-gradient(ellipse at 30% 0%, rgba(var(--accentcolor), 0.08), transparent 55%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.35));
+}
+
+
+/* —— glass панелі (сайдбар, чат, members) —— */
+.theme-dark [class*="sidebar"],
+.theme-dark [class*="chat"][class*="chat"],
+.theme-dark [class*="members"],
+.theme-dark [class*="container"][class*="sidebar"] {
+    backdrop-filter: blur(var(--king-glass-blur)) saturate(1.15);
+    -webkit-backdrop-filter: blur(var(--king-glass-blur)) saturate(1.15);
+}
+
+.theme-dark .wrapper_ef3116,
+.theme-dark .container__2637a,
+.theme-dark .chat_f75fb0,
+.theme-dark .container_c8ffbb {
+    background: var(--king-glass-tint) !important;
+    border-radius: var(--window-border-radius);
+    box-shadow:
+        inset 0 0 0 1px var(--king-glass-border),
+        0 8px 32px rgba(0, 0, 0, 0.35);
+    transition: box-shadow var(--king-anim-slow) var(--king-ease-smooth);
+}
+
+.theme-dark [class*="sidebar"]:hover,
+.theme-dark .container__2637a:hover {
+    box-shadow:
+        inset 0 0 0 1px rgba(var(--accentcolor), 0.35),
+        0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+
+/* —— скролбар —— */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 99px;
+    background: linear-gradient(
+        180deg,
+        rgba(var(--accentcolor), 0.55),
+        rgba(var(--accentcolor), 0.2)
+    ) !important;
+    transition: background var(--king-anim-fast) ease, box-shadow var(--king-anim-fast) ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(var(--accentcolor), 0.75) !important;
+    box-shadow: 0 0 12px var(--king-glow);
+}
+
+
+/* —— сервери —— */
+[class*="guilds"] [class*="listItem"] [class*="wrapper"],
+[class*="guilds"] [class*="icon"] {
+    transition:
+        transform var(--king-anim-mid) var(--king-ease-pop),
+        filter var(--king-anim-mid) ease !important;
+}
+
+[class*="guilds"] [class*="listItem"]:hover [class*="wrapper"],
+[class*="guilds"] [class*="listItem"]:hover [class*="icon"] {
+    transform: scale(1.12) rotate(-5deg) !important;
+    filter: drop-shadow(0 0 12px var(--king-glow));
+}
+
+[class*="guilds"] [class*="listItem"][class*="selected"] [class*="wrapper"] {
+    animation: king-pulse-glow var(--king-pulse) ease-in-out infinite;
+}
+
+[class*="guilds"] [class*="folder"][class*="open"] {
+    animation: king-pop-in var(--king-anim-mid) var(--king-ease-pop) both;
+}
+
+
+/* —— канали —— */
+[class*="sidebar"] [class*="channel"][class*="interactive"],
+[class*="sidebar"] [class*="channel"][class*="link"] {
+    border-radius: 8px;
+    transition:
+        transform var(--king-anim-fast) var(--king-ease-pop),
+        background var(--king-anim-fast) ease,
+        color var(--king-anim-fast) ease !important;
+}
+
+[class*="sidebar"] [class*="channel"][class*="interactive"]:hover,
+[class*="sidebar"] [class*="channel"][class*="link"]:hover {
+    transform: translateX(8px) !important;
+    background: rgba(var(--accentcolor), 0.12) !important;
+}
+
+[class*="sidebar"] [class*="channel"][class*="selected"] {
+    background: rgba(var(--accentcolor), 0.18) !important;
+    box-shadow: inset 3px 0 0 var(--accentcolorV2);
+}
+
+[class*="unreadPill"],
+[class*="unreadBar"] {
+    animation: king-pulse-scale var(--king-pulse) ease-in-out infinite !important;
+}
+
+
+/* —— заголовок каналу (тільки верх чату) —— */
+[class*="chatHeader"] [class*="title"],
+[class*="subtitleContainer"] > [class*="title"] {
+    color: var(--header-primary) !important;
+    text-shadow: 0 0 18px var(--king-glow);
+    transition: text-shadow var(--king-anim-mid) ease;
+}
+
+[class*="chatHeader"]:hover [class*="title"] {
+    text-shadow: 0 0 24px var(--king-glow-strong);
+}
+
+
+/* —— повідомлення —— */
+li[class*="messageListItem"] {
+    transition:
+        transform var(--king-anim-fast) var(--king-ease-smooth),
+        background var(--king-anim-fast) ease,
+        border-radius var(--king-anim-fast) ease !important;
+    border-radius: 8px;
+}
+
+li[class*="messageListItem"]:hover {
+    transform: translateX(6px) !important;
+    background: rgba(var(--accentcolor), 0.06) !important;
+}
+
+[class*="mentioned"] {
+    animation: king-slide-in var(--king-anim-mid) var(--king-ease-smooth) both;
+    border-left: 3px solid var(--accentcolorV2) !important;
+    background: rgba(var(--accentcolor), 0.1) !important;
+}
+
+[class*="reaction"] {
+    transition: transform var(--king-anim-fast) var(--king-ease-pop) !important;
+    border-radius: 8px !important;
+}
+
+[class*="reaction"]:hover {
+    transform: scale(1.18) rotate(-4deg) !important;
+    background: rgba(var(--accentcolor), 0.2) !important;
+}
+
+[class*="reaction"][class*="reactionMe"] {
+    box-shadow: 0 0 10px var(--king-glow);
+}
+
+
+/* —— embed / медіа —— */
+[class*="embed"],
+[class*="attachment"],
+[class*="imageWrapper"],
+[class*="videoWrapper"] {
+    border-radius: 10px !important;
+    transition:
+        transform var(--king-anim-mid) var(--king-ease-smooth),
+        box-shadow var(--king-anim-mid) ease !important;
+}
+
+[class*="embed"]:hover,
+[class*="attachment"]:hover,
+[class*="imageWrapper"]:hover {
+    transform: scale(1.02) translateY(-3px) !important;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+}
+
+
+/* —— code blocks —— */
+[class*="codeBlock"],
+pre[class*="code"] {
+    border-left: 3px solid var(--accentcolorV2) !important;
+    transition: box-shadow var(--king-anim-fast) ease;
+}
+
+[class*="codeBlock"]:hover,
+pre[class*="code"]:hover {
+    box-shadow: 0 0 16px rgba(var(--accentcolor), 0.25);
+}
+
+
+/* —— аватари / members —— */
+[class*="members"] [class*="member"]:hover {
+    background: rgba(var(--accentcolor), 0.08) !important;
+    border-radius: 8px;
+    transition: background var(--king-anim-fast) ease;
+}
+
+[class*="members"] [class*="avatar"]:hover,
+[class*="avatar"][class*="clickable"]:hover {
+    transform: scale(1.1) !important;
+    filter: drop-shadow(0 0 10px var(--king-glow));
+    transition: transform var(--king-anim-mid) var(--king-ease-pop), filter var(--king-anim-mid) ease !important;
+}
+
+[class*="speaking"] [class*="avatar"] {
+    animation: king-ring 1.2s ease-out infinite;
+}
+
+
+/* —— поле вводу —— */
+[class*="channelTextArea"],
+[class*="textArea"] {
+    border-radius: 12px !important;
+    transition:
+        box-shadow var(--king-anim-mid) ease,
+        border-color var(--king-anim-mid) ease !important;
+}
+
+[class*="channelTextArea"]:focus-within,
+[class*="textArea"]:focus-within {
+    box-shadow:
+        0 0 0 1px rgba(var(--accentcolor), 0.5),
+        0 0 20px var(--king-glow) !important;
+}
+
+
+/* —— кнопки (тільки іконки / filled, не всі підряд) —— */
+[class*="button"][class*="lookFilled"]:not([disabled]):hover,
+[class*="iconButton"]:not([disabled]):hover,
+[class*="button"][class*="colorBrand"]:not([disabled]):hover {
+    transform: scale(1.07) !important;
+    box-shadow: 0 0 14px var(--king-glow) !important;
+    transition: transform var(--king-anim-fast) var(--king-ease-pop), box-shadow var(--king-anim-fast) ease !important;
+}
+
+[class*="button"][class*="lookFilled"]:not([disabled]):active,
+[class*="iconButton"]:not([disabled]):active {
+    transform: scale(0.95) !important;
+}
+
+
+/* —— typing —— */
+[class*="typing"] [class*="dot"],
+[class*="typingDots"] span {
+    animation: king-typing 1s ease-in-out infinite !important;
+}
+
+[class*="typing"] [class*="dot"]:nth-child(2),
+[class*="typingDots"] span:nth-child(2) { animation-delay: 0.12s !important; }
+
+[class*="typing"] [class*="dot"]:nth-child(3),
+[class*="typingDots"] span:nth-child(3) { animation-delay: 0.24s !important; }
+
+
+/* —— modals / popouts / context menu —— */
+[class*="layer"] [class*="root"][class*="modal"],
+[class*="userPopout"],
+[class*="profilePanel"],
+[class*="menu"][class*="layer"] {
+    animation: king-pop-in 0.35s var(--king-ease-pop) both !important;
+}
+
+[class*="contextMenu"] [class*="item"]:hover {
+    background: rgba(var(--accentcolor), 0.2) !important;
+    transform: translateX(4px);
+    transition: transform var(--king-anim-fast) var(--king-ease-pop), background var(--king-anim-fast) ease;
+}
+
+
+/* —— tooltips / toasts —— */
+[class*="tooltip"] {
+    animation: king-slide-in var(--king-anim-fast) var(--king-ease-smooth) both !important;
+}
+
+[class*="toast"] {
+    animation: king-toast 0.4s var(--king-ease-pop) both !important;
+    border-left: 3px solid var(--accentcolorV2) !important;
+}
+
+
+/* —— search —— */
+[class*="searchBar"] [class*="input"]:focus-within {
+    box-shadow: 0 0 18px var(--king-glow) !important;
+    transition: box-shadow var(--king-anim-mid) ease;
+}
+
+
+/* —— voice / call —— */
+[class*="voiceUser"]:hover,
+[class*="participant"]:hover {
+    transform: scale(1.05) !important;
+    transition: transform var(--king-anim-mid) var(--king-ease-pop) !important;
+}
+
+[class*="controlButton"]:hover {
+    animation: king-pulse-glow var(--king-pulse) ease-in-out infinite;
+}
+
+
+/* —— friends —— */
+[class*="peopleList"] [class*="listItem"],
+[class*="card"][class*="friend"] {
+    transition:
+        transform var(--king-anim-mid) var(--king-ease-pop),
+        box-shadow var(--king-anim-mid) ease !important;
+    border-radius: 12px !important;
+}
+
+[class*="peopleList"] [class*="listItem"]:hover,
+[class*="card"][class*="friend"]:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+}
+
+
+/* —— settings tabs —— */
+[class*="side"] [class*="selected"],
+[class*="tabBar"] [class*="tab"][class*="selected"] {
+    position: relative;
+    background: rgba(var(--accentcolor), 0.15) !important;
+}
+
+[class*="side"] [class*="selected"]::before,
+[class*="tabBar"] [class*="tab"][class*="selected"]::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10%;
+    height: 80%;
+    width: 3px;
+    background: var(--accentcolorV2);
+    border-radius: 99px;
+    box-shadow: 0 0 10px var(--king-glow);
+}
+
+
+/* —— emoji picker —— */
+[class*="emojiItem"]:hover,
+[class*="emoji"][class*="selectable"]:hover {
+    transform: scale(1.25) rotate(8deg) !important;
+    transition: transform var(--king-anim-fast) var(--king-ease-pop) !important;
+}
+
+
+/* —— spotify —— */
+[class*="spotify"] [class*="button"]:hover,
+img[src*="Glow_Squid"] {
+    animation: king-float 2.2s ease-in-out infinite !important;
+    filter: drop-shadow(0 0 8px var(--king-glow));
+}
+
+
+/* —— roles / pills —— */
+[class*="role"],
+[class*="rolePill"] {
+    transition: transform var(--king-anim-fast) var(--king-ease-pop), background var(--king-anim-fast) ease !important;
+}
+
+[class*="role"]:hover,
+[class*="rolePill"]:hover {
+    transform: scale(1.05) !important;
+    background: rgba(var(--accentcolor), 0.25) !important;
+}
+
+
+/* —— links —— */
+a[href]:hover {
+    text-shadow: 0 0 10px var(--king-glow);
+    transition: text-shadow var(--king-anim-fast) ease;
+}
+
+
+/* —— user area (низ) —— */
+[class*="panels"] [class*="avatar"] {
+    transition: transform var(--king-anim-mid) var(--king-ease-pop), filter var(--king-anim-mid) ease !important;
+}
+
+[class*="panels"]:hover [class*="avatar"] {
+    transform: scale(1.08) !important;
+    filter: drop-shadow(0 0 12px var(--king-glow));
+}
+
+
+/* —— jump to present / new messages —— */
+[class*="jumpToPresent"],
+[class*="bar"][class*="newMessages"] {
+    transition: transform var(--king-anim-fast) var(--king-ease-pop), box-shadow var(--king-anim-fast) ease !important;
+}
+
+[class*="jumpToPresent"]:hover,
+[class*="bar"][class*="newMessages"]:hover {
+    transform: scale(1.08) !important;
+    box-shadow: 0 0 16px var(--king-glow) !important;
+}
+
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    #app-mount::before {
+        animation: none !important;
+    }
+}
