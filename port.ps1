@@ -1,7 +1,7 @@
 # Minecraft Cheat Checker v2.0 - HOST/PORT RANDOMIZER
 # ПЕРВЫМ ДЕЛОМ КАЧАЕМ PS1, ПОТОМ МЕНЮ С ХОСТАМИ/ПОРТАМИ
 
-$Host.UI.RawUI.WindowTitle = "Minecraft Cheat Checker v2.0 - RANDOMIZER"
+$Host.UI.RawUI.WindowTitle = "Host|port v2.0 - RANDOMIZER"
 $Host.UI.RawUI.BackgroundColor = "Black"
 $Host.UI.RawUI.ForegroundColor = "DarkRed"
 Clear-Host
