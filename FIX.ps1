@@ -90,8 +90,8 @@ do {
 Clear-Host
 Show-KRAKEH-Header
 Write-Host ""
-Write-Host "   читы не " -NoNewline -ForegroundColor Red
-Write-Host "найдены " -NoNewline -ForegroundColor Yellow
+Write-Host " ошибок не " -NoNewline -ForegroundColor Red
+Write-Host "найдено " -NoNewline -ForegroundColor Yellow
 Write-Host "просмотр " -NoNewline -ForegroundColor Green
 Write-Host "закончен " -NoNewline -ForegroundColor Blue
 Write-Host "спасибо " -NoNewline -ForegroundColor Cyan
